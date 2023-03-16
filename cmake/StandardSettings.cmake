@@ -68,4 +68,10 @@ if(WIN32)
     standard_settings
     INTERFACE WIN32_LEAN_AND_MEAN
   )
+  
+  # Enable linker optimizations for lld-link and link on Windows
+  target_link_options(
+    standard_settings
+    INTERFACE /OPT:REF,ICF
+  )
 endif()
